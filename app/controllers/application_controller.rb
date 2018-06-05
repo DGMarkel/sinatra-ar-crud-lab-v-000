@@ -16,11 +16,6 @@ class ApplicationController < Sinatra::Base
     erb :new
   end
 
-  get '/posts' do
-
-    erb :index
-  end
-
   post '/posts' do
     new_post = Post.new
     new_post[:name] = params[:title]
@@ -28,6 +23,7 @@ class ApplicationController < Sinatra::Base
     new_post.save
     @posts = Post.all
     erb :index
+    binding.pry
   end
 
   get '/posts/:id' do
