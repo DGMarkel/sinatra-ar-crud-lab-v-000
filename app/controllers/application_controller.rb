@@ -23,12 +23,6 @@ class ApplicationController < Sinatra::Base
     new_post.save
     @posts = Post.all
     erb :index
-    binding.pry
-  end
-
-  get '/index' do
-    @posts
-    erb :index
   end
 
   get '/posts/:id' do
