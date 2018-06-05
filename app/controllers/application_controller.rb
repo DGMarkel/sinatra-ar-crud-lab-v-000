@@ -16,17 +16,17 @@ class ApplicationController < Sinatra::Base
     erb :new
   end
 
+  get '/posts' do
+
+    erb :index
+  end
+
   post '/posts' do
     new_post = Post.new
     new_post[:name] = params[:title]
     new_post[:content] = params[:content]
     new_post.save
     @posts = Post.all
-    erb :index
-  end
-
-  get '/posts' do
-
     erb :index
   end
 
