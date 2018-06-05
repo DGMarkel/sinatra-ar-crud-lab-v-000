@@ -18,7 +18,7 @@ class ApplicationController < Sinatra::Base
 
   post '/posts' do
     new_post = Post.new
-    new_post[:name] = params[:title]
+    new_post[:name] = params[:name]
     new_post[:content] = params[:content]
     new_post.save
     @posts = Post.all
