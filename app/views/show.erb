@@ -2,7 +2,13 @@
 <p style="width:700px;margin:auto;"><%= @post.content %>
 
 <p>
-  <form method="post" action="/posts/<%= @post.id %>/delete">
+
+<form method="post" action="/posts/<%= @post.id %>/delete">
   <input id="hidden" type="hidden" name="_method" value="delete">
   <input type="submit" value="delete">
+</form>
+
+<form method="post" action="/posts/<%= @post.id %>/edit">
+  <input id="hidden" type="hidden" name="_method" value="edit">
+  <input type="submit" value="edit">
 </form>
